@@ -1,1 +1,1 @@
-# goblog
+# Some blog written in go
