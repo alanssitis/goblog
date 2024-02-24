@@ -9,7 +9,10 @@ import (
 type HelloHandler struct{}
 
 func (HelloHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "Hello, world!\n")
+	_, err := io.WriteString(w, "Hello, world!\n")
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
 
 func main() {

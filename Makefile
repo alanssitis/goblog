@@ -1,6 +1,9 @@
 build: modules
 	@mkdir -p bin
-	go build -o ./bin/goblog main.go
+	go build -o ./bin/goblog ./...
+
+lint: modules
+	@golangci-lint run
 
 modules:
 	@go mod tidy
